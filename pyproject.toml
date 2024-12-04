@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=70.0.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["acn_embed"]
+package-dir = {"" = "src"}
+
+[project]
+name = "acn_embed"
+authors = [{ name = "Apple" }]
+readme = "README.md"
+version = "1.0"
+requires-python = ">3.8"
+description = "Python package for computing Acoustic Neighbor Embeddings from audio or text"
+
+dependencies = [
+    "numpy",
+    "pytz",
+    "soundfile",
+    "torch>=2.3",
+    "torchaudio>=2.3",
+]
+
+[project.optional-dependencies]
+full = [
+    "arpa",
+    "h5py",
+    "isoscore",
+    "kaldi_io",
+    "scipy",
+    "sequitur-g2p @ git+https://github.com/sequitur-g2p/sequitur-g2p@master",
+    "PyYaml"
+]
+
+[project.urls]
+Homepage = "https://github.com/apple/ml-acn-embed"
+Documentation = "https://github.com/apple/ml-acn-embed"
+Repository = "https://github.com/apple/ml-acn-embed"
+
+[project.scripts]
+acn_embed_audio = "acn_embed.tools.acn_embed_audio:main"
+acn_embed_phones = "acn_embed.tools.acn_embed_phones:main"
+acn_embed_graphemes = "acn_embed.tools.acn_embed_graphemes:main"
+force_align = "acn_embed.tools.force_align:main"
+
+[tool.black]
+line-length = 99
