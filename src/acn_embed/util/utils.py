@@ -7,7 +7,7 @@ LOGGER = get_logger(__name__)
 
 def count_lines(filename):
     """
-    Count the number of lines in a text or gzipped texst file
+    Count the number of lines in a text or gzipped text file
     """
     filename = str(filename)
     with (

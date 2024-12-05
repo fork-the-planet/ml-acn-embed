@@ -33,7 +33,7 @@ def readlines(file: Path):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Convert LibriHeavy cuts jsonl file to transcription file",
+        description="Convert Libriheavy cuts jsonl file to transcription file",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument("--src", action="store", type=Path, required=True)

@@ -1,6 +1,6 @@
 # Data preparation for embedder training
 
-Force-align the LibriHeavy data using the DNN-HMM hybrid AM to obtain word segmentations and pronunciations:
+Force-align the Libriheavy data using the DNN-HMM hybrid AM to obtain word segmentations and pronunciations:
 
 ```commandline
 for DTYPE in trb cv exp; do \

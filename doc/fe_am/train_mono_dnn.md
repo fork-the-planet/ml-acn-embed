@@ -62,7 +62,7 @@ Sanity check (should output the message `"Mapping is identity"`):
 $ACN/fe_am/hmm/check_pdf_mapping_is_identity.py $WORK/kaldi-data-pi-mono/trans.txt
 ```
 
-For each node, compute the alignments over the training and development data:
+For each node, compute the alignments over the training and cross-validation data:
 
 ```commandline
 for DTYPE in cv tra; do 

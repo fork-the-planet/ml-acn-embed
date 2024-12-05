@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Convert & split all LibriHeavy .flac files to utterance .wav files
+Convert & split all Libriheavy .flac files to utterance .wav files
 """
 import argparse
 import gzip

@@ -37,7 +37,7 @@ mkdir -p $DATA $DNN $EXP $HMM $LOG $MISC $MODEL $RESOURCE $OUTPUT ${CKPT_DIR}
 
 Get all the [downloadables](downloads.md) and put them in `$WORK/download`. The only "required" file is `short-utts.tgz`, but other files may be useful if you want to skip some steps or replicate our experiments exactly.
 
-Extract WAV files from LibriHeavy:
+Extract WAV files from [Libriheavy](https://github.com/k2-fsa/libriheavy):
 
 ```commandline
 rm -f jobs
@@ -49,7 +49,7 @@ done
 parallel -j 8 < jobs
 ```
 
-Download LibriSpeech resource files:
+Download [LibriSpeech resource files](https://www.openslr.org/11/):
 
 ```commandline
 mkdir -p $RESOURCE/
@@ -80,7 +80,7 @@ for DTYPE in tr7 tra trb cv exp; do
 done
 ```
 
-The resulting training, development, and experiment data sets are:
+The resulting training, cross-validation, and experiment data sets are:
 
 | Data type | Number of utterances | Total hours |
 |-----------|----------------------|-------------|
@@ -90,7 +90,7 @@ The resulting training, development, and experiment data sets are:
 | CV        | 263,122              | 1,000       |
 | EXP       | 263,431              | 1,000       |
 
-Get a list of all the words in the training, dev, and experimental data. This will be used for HMM training and force-alignment of experimental data:
+Get a list of all the words in the above data. This will be used for HMM training and force-alignment of experimental data:
 
 ```commandline
 $ACN/setup/get_words_from_tran.py \
@@ -113,7 +113,7 @@ $ACN/setup/get_lexicon.py \
     --phones $ACN/setup/non-sil-phones.json
 ```
 
-This results in about 386,853 words, 720,249 prons, and 615,497 unique prons in `$MISC/forcealign-lexicon.txt`.
+This results in about 386,853 words, 720,249 prons (pronunciations), and 615,497 unique prons in `$MISC/forcealign-lexicon.txt`.
 
 Get a list of all the words in the `3-gram.pruned.1e-7.arpa.gz` LM. This will be used for HMM testing:
 
@@ -138,7 +138,7 @@ $ACN/setup/get_lexicon.py \
 
 This results in about 200,000 words, 206,093 prons, and 176,921 unique prons in `$MISC/testing-lexicon.txt`.
 
-Get a sanitized list of all words in the LibriHeavy dataset, for use in experiments:
+Get a sanitized list of all words in the Libriheavy dataset, for use in experiments:
 
 ```commandline
 $ACN/setup/get_words_from_tran.py --sanitize \

@@ -2,7 +2,7 @@
 
 Official source code, documentation, and other files for training models and replicating the experiments in the paper, [_A Theoretical Framework for Acoustic Neighbor Embeddings_](https://arxiv.org/abs/2412.02164).
 
-Pre-trained models with an accessible end-user Python interface are also provided.
+Pretrained models with an accessible end-user Python interface are also provided.
 
 ## Quick start for end users of pretrained embedders
 
@@ -56,6 +56,8 @@ acn_embed_graphemes model/embedder-64 --orth "NEW YORK"
   -5.1259e-01  3.6053e-01 -3.2967e-01 -2.0133e-01 -1.0037e-02 -2.4647e-01  3.3688e-02 -9.0557e-01
   -3.3233e-02 -2.0612e-01 -2.2083e-01 -3.8905e-01  7.9650e-01  2.3235e-01  2.6399e-01  2.5961e-01]]
 ```
+
+Notice that the three vectors above are all similar, because they represent similar sounds.
 
 Run the above tools with the `--help`  option for further documentation. To compute many embeddings in bulk, see docs [here](doc/misc/batch_embed.md).
 

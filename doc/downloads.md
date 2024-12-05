@@ -10,7 +10,7 @@
 
 | File & MD5 Hash | Description |
 |-------------------------------------------------------------------------|--------------------|
-| [short-utts.tgz](https://ml-site.cdn-apple.com/models/ml-acn-embed/short-utts.tgz) (98 MB)<br>`933d42f422bd8ecca5b1fbd5e54beb41`| List of IDs of "short" utterances in LibriHeavy that we use for training and experiments. |
+| [short-utts.tgz](https://ml-site.cdn-apple.com/models/ml-acn-embed/short-utts.tgz) (98 MB)<br>`933d42f422bd8ecca5b1fbd5e54beb41`| List of IDs of "short" utterances in Libriheavy that we use for training and experiments. |
 
 ## Intermediate files generated during the process
 
