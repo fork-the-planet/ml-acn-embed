@@ -61,6 +61,42 @@ Notice that the three vectors above are all similar, because they represent simi
 
 Run the above tools with the `--help`  option for further documentation. To compute many embeddings in bulk, see docs [here](doc/misc/batch_embed.md).
 
+### Phonetic nearest neighbor search
+
+An interactive demo is included for doing nearest-neighbor searches using grapheme embeddings to find phonetically-similar words.
+
+In addition to installing the software and pretrained models above, download the vocabulary (total tarball size 866 MB):
+```commandline
+wget https://ml-site.cdn-apple.com/models/ml-acn-embed/wakeword.tgz -O - | tar xz
+```
+
+Run the tool and type in any arbitrary string to find phonetically-similar entries in a vocabulary of 195k (controllable by `--lm-score-thres`) words:
+
+```commandline
+acn_nnsearch --embeddings wakeword/embeddings-3-gram.pruned.1e-7.pt \
+    --lm-score-thres -14 --model model/embedder-64 \
+    --num-results 3 --strings wakeword/str2score.3-gram.pruned.1e-7.pt
+
+Reading strings...
+Reading embeddings...
+Loaded 194550 strings after pruning
+
+QUERY>> create
+dist=0.612 CRATE
+dist=0.618 CRETE
+dist=0.865 CREEDE
+
+QUERY>> wreck a nice
+dist=1.052 RECOGNISE
+dist=1.085 RECOGNIZE
+dist=1.088 RECOGNISED
+
+QUERY>> I scream
+dist=0.561 ICE CREAM
+dist=1.543 EXTREME
+dist=1.787 A STREAM
+```
+
 ## Table of contents
 
 1. [Set up environment and prepare data](doc/setup.md)

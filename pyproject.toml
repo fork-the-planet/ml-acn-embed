@@ -43,6 +43,7 @@ acn_embed_audio = "acn_embed.tools.acn_embed_audio:main"
 acn_embed_phones = "acn_embed.tools.acn_embed_phones:main"
 acn_embed_graphemes = "acn_embed.tools.acn_embed_graphemes:main"
 force_align = "acn_embed.tools.force_align:main"
+acn_nnsearch = "acn_embed.tools.acn_nnsearch:main"
 
 [tool.black]
 line-length = 99
