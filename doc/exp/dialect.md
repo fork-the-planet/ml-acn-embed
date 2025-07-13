@@ -30,7 +30,9 @@ for DIM in  \
 done
 ```
 
-Compute dialect distances, using sigma values from grapheme-based embedding clusters:
+Compute dialect distances, using sigma values
+[computed](../../src/acn_embed/embed/train/f/get_cluster_stats.py) from the
+training data:
 ```commandline
 mkdir -p $EXP/dialect/result
 for DIM  SIGMA in  \
